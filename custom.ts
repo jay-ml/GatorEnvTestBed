@@ -29,7 +29,6 @@ namespace gatorEnvironment {
     //% weight=32 
     //% blockId="gatorEnvironment_beginEnvironment" 
     //% block="initialize gator:environment sensors"
-    //% shim=gatorEnvironment::beginEnvironment
     export function beginEnvironment() {
         gatorEnvironmentCombo.begin();
         return
@@ -41,7 +40,6 @@ namespace gatorEnvironment {
     //% weight=31
     //% blockId="gatorEnvironment_getMeasurement"
     //% block="get %measurementType | value"
-    //% shim=gatorEnvironment::getMeasurement
     export function getMeasurement(type: measurementType): number {
         let value = 0;
         switch (type) {
