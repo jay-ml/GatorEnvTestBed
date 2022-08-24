@@ -12,7 +12,9 @@
         "main.ts",
         "README.md",
         "custom.ts",
-        "environment.ts"
+        "environment.ts",
+        "enums.d.ts",
+        "shims.d.ts"
     ],
     "testFiles": [
         "test.ts"
