@@ -29,7 +29,6 @@ namespace gatorEnvironment {
     //% weight=32 
     //% blockId="gatorEnvironment_beginEnvironment" 
     //% block="initialize gator:environment sensors"
-    //% shim=gatorEnvironment::beginEnvironment
     export function beginEnvironment() {
         gatorEnvironmentCombo = new Environment();
         gatorEnvironmentCombo.begin();
