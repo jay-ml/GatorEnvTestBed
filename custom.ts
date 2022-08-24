@@ -21,7 +21,7 @@ enum measurementType {
 //% color=#f44242 icon="\uf0c2"
 namespace gatorEnvironment {
 
-    let gatorEnvironmentCombo; 
+    let gatorEnvironmentCombo: Environment; 
 
     /**
     * Initialize the gator:environment sensor for readings
@@ -46,16 +46,16 @@ namespace gatorEnvironment {
         let value = 0;
         switch (type) {
             case 1:
-                //value = gatorEnvironmentCombo.readTempC();
+                value = gatorEnvironmentCombo.readTempC();
                 break;
             case 2:
-                //value = gatorEnvironmentCombo.readTempF();
+                value = gatorEnvironmentCombo.readTempF();
                 break;
             case 3:
-                //value = gatorEnvironmentCombo.readFloatHumidity();
+                value = gatorEnvironmentCombo.readFloatHumidity();
                 break;
             case 4:
-                //value = gatorEnvironmentCombo.readFloatPressure();
+                value = gatorEnvironmentCombo.readFloatPressure();
                 break;
             case 5:
                 // if (gatorEnvironmentCombo.dataAvailable()) {
