@@ -82,6 +82,7 @@ class Environment {
     }
 
     begin(){
+        this.temperature = -1;
 
     }
 
