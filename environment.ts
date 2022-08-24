@@ -87,18 +87,15 @@ class Environment {
 
     readTempC(){
         return this.temperature;
-
     }
 
     readTempF(){
         return 0;
-
     }
 
 
     readFloatHumidity(){
         return this.humidity;
-        
     }
 
     readFloatPressure(){
