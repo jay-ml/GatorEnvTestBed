@@ -82,7 +82,7 @@ class Environment {
     }
 
     begin(){
-        this.temperature = -1;
+        this.temperature = 1;
 
     }
 
@@ -104,7 +104,7 @@ class Environment {
     }
 
     dataAvailable(){
-        return 0;
+        return false;
 
     }
 
