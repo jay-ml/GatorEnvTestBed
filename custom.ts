@@ -45,7 +45,7 @@ namespace gatorEnvironment {
         let value = 0;
         switch (type) {
             case 1:
-                //value = gatorEnvironmentCombo.readTempC();
+                value = gatorEnvironmentCombo.readTempC();
                 break;
             case 2:
                 //value = gatorEnvironmentCombo.readTempF();
