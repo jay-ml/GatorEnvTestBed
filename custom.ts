@@ -42,6 +42,7 @@ namespace gatorEnvironment {
     //% weight=31
     //% blockId="gatorEnvironment_getMeasurement"
     //% block="get %measurementType | value"
+    //% shim=gatorEnvironment::beginEnvironment
     export function getMeasurement(type: measurementType): number {
         let value = 0;
         switch (type) {
