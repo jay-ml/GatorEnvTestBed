@@ -14,7 +14,8 @@
         "custom.ts",
         "environment.ts",
         "enums.d.ts",
-        "shims.d.ts"
+        "shims.d.ts",
+        "tsconfig.json"
     ],
     "testFiles": [
         "test.ts"
