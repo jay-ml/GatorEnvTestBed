@@ -120,7 +120,7 @@ class Environment {
         let current_mode = pins.i2cReadNumber(0x5B, NumberFormat.UInt8LE, false)
         current_mode &= ~(0b00000111 << 4);
         current_mode |= (4 << 4);
-        let message = (0x0100 << 8) | current_mode;
+        let message = (0x01 << 8) | current_mode;
         pins.i2cWriteNumber(0x5B, message, NumberFormat.UInt16BE, false);
 
         serial.writeLine("Drive Mode")
