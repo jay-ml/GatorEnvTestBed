@@ -82,7 +82,50 @@ class Environment {
     }
 
     begin(){
-        this.temperature = 1;
+
+        pins.i2cWriteNumber(0x5B, 0xFF, NumberFormat.UInt8LE, false)
+        pause(50)
+        pins.i2cWriteNumber(0x5B, 0x11, NumberFormat.UInt8LE, false)
+        pause(50)
+        pins.i2cWriteNumber(0x5B, 0xE5, NumberFormat.UInt8LE, false)
+        pause(50)
+        pins.i2cWriteNumber(0x5B, 0x72, NumberFormat.UInt8LE, false)
+        pause(50)
+        pins.i2cWriteNumber(0x5B, 0x8A, NumberFormat.UInt8LE, false)
+        pause(100)
+
+        let temp: number = 0;
+
+        for (let i = 0; i < 200000; i++) //Spin for a good while
+        {
+            temp++;
+        }
+
+        // Check Status
+        pins.i2cWriteNumber(0x5B, 0x00, NumberFormat.UInt8LE, false)
+        let status = pins.i2cReadNumber(0x5B, NumberFormat.UInt8LE, false)
+
+        serial.writeLine("Status")
+        serial.writeNumber(status)
+        serial.writeLine("")
+
+        //App Start
+        pins.i2cWriteNumber(0x5B, 0xF4, NumberFormat.UInt8LE, false)
+        serial.writeLine("CCS811 Started")
+
+        pause(100)
+
+        //Set Drive Mode - modified from sparkfun
+        pins.i2cWriteNumber(0x5B, 0x01, NumberFormat.UInt8LE, false)
+        let current_mode = pins.i2cReadNumber(0x5B, NumberFormat.UInt8LE, false)
+        current_mode &= ~(0b00000111 << 4);
+        current_mode |= (4 << 4);
+        let message = (0x0100 << 8) | current_mode;
+        pins.i2cWriteNumber(0x5B, message, NumberFormat.UInt16BE, false);
+
+        serial.writeLine("Drive Mode")
+        serial.writeNumber(current_mode)
+        serial.writeLine("")
 
     }
 
